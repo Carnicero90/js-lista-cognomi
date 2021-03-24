@@ -39,9 +39,9 @@ indice = "";
 indice = listaNomi.indexOf(nomeUtente) + 1;
 
 // CREATE LIST OF LI HTML TAGS FROM listaNomi
-listaHtml = "<li>" + listaNomi.join("</li><li>") + "</li>";
+var listaHtml = "<li>" + listaNomi.join("</li><li>") + "</li>";
 // CREATE STRING SHOWING (INDEX OF nomeUtente) || (ERROR MESSAGE)
-ordineUtente = indice ? `Sei il numero ${indice} in lista.` : "ERRORE: nome non trovato in lista!\nRiprovare più tardi.";
+var ordineUtente = indice ? `Sei il numero ${indice} in lista.` : "ERRORE: nome non trovato in lista!\nRiprovare più tardi.";
 // ---come sopra: non necessario, utile eventualmente per il futuro
 
 // OUTPUT listaHTML AND ordineUtente TO index.html
