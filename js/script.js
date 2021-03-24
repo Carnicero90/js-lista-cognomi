@@ -3,8 +3,9 @@ var listaNomi = ["gIANNI", "franceSco", "aldo", "juanito", "carmen", "carmelo", 
 
 // VALIDATE USERNAME
 while (!nomeUtente) {
-    nomeUtente = prompt("Inserire proprio nome (non lasciare vuoto!").toLowerCase();
+    nomeUtente = prompt("Inserire proprio nome (non lasciare vuoto!");
 }
+nomeUtente = nomeUtente.toLowerCase();
 // PUSH nomeUtente TO listaNomi
 listaNomi.push(nomeUtente);
 
@@ -18,7 +19,7 @@ listaNomi.sort();
 var indice = "";
 for (var i = 0; i < listaNomi.length; i++) {
     if ((!indice) && (listaNomi[i] == nomeUtente)) {
-        var indice = i + 1;
+        indice = i + 1;
     }
 }
 
