@@ -1,5 +1,5 @@
 var nomeUtente;
-var listaNomi = ["aldo", "juanito", "carmen", "carmelo", "Alejandro", "ZORRO"];
+var listaNomi = ["gIANNI", "franceSco", "aldo", "juanito", "carmen", "carmelo", "Alejandro", "ZORRO"];
 
 // VALIDATE USERNAME
 while (!nomeUtente) {
@@ -24,16 +24,20 @@ for (var i = 0; i < listaNomi.length; i++) {
 indice = "";
 var i = 0;
 while (!indice && i < listaNomi.length) {
-    //qua la verifica che i < .length non è effettivamente necessaria, ma hai visto mai
+    // ---qua la verifica che i < .length non è effettivamente necessaria, ma hai visto mai
     if (listaNomi[i] == nomeUtente) {
         indice = i;
     }
     i++;
 }
+indice = "";
+indice = listaNomi.indexOf(nomeUtente);
 
 // CREATE LIST OF LI HTML TAGS FROM listaNomi
 listaHtml = "<li>" + listaNomi.join("</li><li>") + "</li>";
+ordineUtente = indice ? `Sei il numero ${indice + 1} in lista.` : "ERRORE: nome non trovato in lista!\nRiprovare più tardi.";
+// ---come sopra: non necessario, utile eventualmente per il futuro
 
 // OUTPUT listaHTML AND indice TO index.html
 document.getElementById("lista_nomi").innerHTML = listaHtml;
-document.getElementById("posizione_utente").innerHTML = indice + 1;
+document.getElementById("posizione_utente").innerHTML = ordineUtente;
