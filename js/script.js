@@ -18,7 +18,7 @@ listaNomi.sort();
 var indice = "";
 for (var i = 0; i < listaNomi.length; i++) {
     if ((!indice) && (listaNomi[i] == nomeUtente)) {
-        var indice = i;
+        var indice = i + 1;
     }
 }
 
@@ -28,19 +28,19 @@ var i = 0;
 while (!indice && i < listaNomi.length) {
     // ---qua la verifica che i < .length non è effettivamente necessaria, ma hai visto mai
     if (listaNomi[i] == nomeUtente) {
-        indice = i;
+        indice = i + 1;
     }
     i++;
 }
 
 // ---via .indexOf METHOD
 indice = "";
-indice = listaNomi.indexOf(nomeUtente);
+indice = listaNomi.indexOf(nomeUtente) + 1;
 
 // CREATE LIST OF LI HTML TAGS FROM listaNomi
 listaHtml = "<li>" + listaNomi.join("</li><li>") + "</li>";
 // CREATE STRING SHOWING (INDEX OF nomeUtente) || (ERROR MESSAGE)
-ordineUtente = indice ? `Sei il numero ${indice + 1} in lista.` : "ERRORE: nome non trovato in lista!\nRiprovare più tardi.";
+ordineUtente = indice ? `Sei il numero ${indice} in lista.` : "ERRORE: nome non trovato in lista!\nRiprovare più tardi.";
 // ---come sopra: non necessario, utile eventualmente per il futuro
 
 // OUTPUT listaHTML AND ordineUtente TO index.html
