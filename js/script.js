@@ -11,14 +11,24 @@ listaNomi.push(nomeUtente);
 listaNomi = listaNomi.map(name => name.toLocaleLowerCase());
 listaNomi.sort();
 
-var indice;
+listaHtml = "<li>" + listaNomi.join("</li><li>") + "</li>";
+document.getElementById("lista_nomi").innerHTML = listaHtml;
+
+var indice = "";
 for (var i = 0; i < listaNomi.length; i++) {
-    var nome = listaNomi[i];
-    if (!indice && nome == nomeUtente) {
-        var indice = i + 1;
-        console.log(i);
+    if ((!indice) && (listaNomi[i] == nomeUtente)) {
+        var indice = i;
     }
-    document.getElementById("lista_nomi").innerHTML += `<li>${nome}</li>`
 }
 
-document.getElementById("posizione_utente").innerHTML = indice;
+indice = "";
+var i = 0;
+while (!indice) {
+    if (listaNomi[i] == nomeUtente) {
+        indice = i;
+    }
+    i++;
+}
+
+
+document.getElementById("posizione_utente").innerHTML = indice + 1;
