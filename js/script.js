@@ -14,6 +14,7 @@ listaNomi = listaNomi.map(name => name.toLowerCase());
 listaNomi.sort();
 
 // FIND listaNomi INDEX OF nomeUtente
+// ---via FOR loop
 var indice = "";
 for (var i = 0; i < listaNomi.length; i++) {
     if ((!indice) && (listaNomi[i] == nomeUtente)) {
@@ -21,6 +22,7 @@ for (var i = 0; i < listaNomi.length; i++) {
     }
 }
 
+// ---via WHILE loop
 indice = "";
 var i = 0;
 while (!indice && i < listaNomi.length) {
@@ -30,6 +32,8 @@ while (!indice && i < listaNomi.length) {
     }
     i++;
 }
+
+// ---via .indexOf METHOD
 indice = "";
 indice = listaNomi.indexOf(nomeUtente);
 
