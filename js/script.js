@@ -23,7 +23,8 @@ for (var i = 0; i < listaNomi.length; i++) {
 
 indice = "";
 var i = 0;
-while (!indice) {
+while (!indice && i < listaNomi.length) {
+    //qua la verifica che i < .length non è effettivamente necessaria, ma hai visto mai
     if (listaNomi[i] == nomeUtente) {
         indice = i;
     }
